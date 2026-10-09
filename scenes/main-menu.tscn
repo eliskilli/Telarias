@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://17unhp7kp8gc"]
+
+[ext_resource type="Script" uid="uid://obm2ehl0xl6j" path="res://scripts/main-menu.gd" id="1_hf3n6"]
+[ext_resource type="Texture2D" uid="uid://dmrxd0yfkxvjj" path="res://sprites/static-sprites/main-menu-background.png" id="1_u4kki"]
+[ext_resource type="FontFile" uid="uid://csvbg3bo4s66q" path="res://text-fonts/GrapeSoda.ttf" id="2_hf3n6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uita3"]
+texture = ExtResource("1_u4kki")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qit8s"]
+bg_color = Color(0, 0.47058824, 0.6117647, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4kki"]
+bg_color = Color(2.5027991e-06, 0.3758715, 0.4916063, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 10
+
+[node name="MainMenu" type="Control" unique_id=529876956]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hf3n6")
+
+[node name="Panel" type="Panel" parent="." unique_id=563526804]
+modulate = Color(0.6706895, 0.6706895, 0.6706895, 1)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_uita3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1854705169]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.5
+offset_top = 63.26001
+offset_right = 153.5
+offset_bottom = 268.2633
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=2067492868]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hf3n6")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qit8s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qit8s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u4kki")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1732950625]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hf3n6")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qit8s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qit8s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u4kki")
+text = "Settings"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=400615717]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_hf3n6")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_qit8s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qit8s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u4kki")
+text = "Leave"
+
+[node name="Label" type="Label" parent="." unique_id=187559144]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -84.0
+offset_right = 400.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_fonts/font = ExtResource("2_hf3n6")
+theme_override_font_sizes/font_size = 100
+text = "Telarias Advanture"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_leave_pressed"]
